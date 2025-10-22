@@ -1,63 +1,90 @@
-
-:root{
-  --bg1:#fff0f6; --bg2:#ffe6f2; --card:#ffffffee; --accent:#ff6fa3; --muted:#6b6b6b;
-  --hand:'#d65d8c';
-}
-*{box-sizing:border-box}
-body,html{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
-body{
-  background: linear-gradient(135deg,var(--bg1),var(--bg2));
-  display:flex;align-items:center;justify-content:center;padding:28px;
-  overflow:hidden;
-}
-
-/* loader */
-.loader{
-  position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,rgba(255,255,255,0.9),rgba(255,255,255,0.6));z-index:30;
-}
-.loader-box{background:rgba(255,255,255,0.95);padding:22px 28px;border-radius:14px;box-shadow:0 10px 40px rgba(0,0,0,0.06);text-align:center}
-.loader-heart{font-size:32px;animation:beat 900ms infinite}
-@keyframes beat{0%{transform:scale(1)}50%{transform:scale(1.16)}100%{transform:scale(1)}}
-.loader-text{margin-top:10px;color:#9b4666;font-family:'Dancing Script', cursive;font-size:18px}
-
-/* main card */
-.stage{width:100%;max-width:820px;position:relative;z-index:10}
-.card{
-  background:linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.98));
-  border-radius:18px;padding:36px;text-align:center;box-shadow:0 18px 80px rgba(255,112,166,0.12);
-  border:1px solid rgba(255,255,255,0.6);
-  position:relative;
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Dancing Script', cursive;
+  background: linear-gradient(135deg, #ffd1dc, #ffb6c1);
+  overflow: hidden;
+  text-align: center;
+  color: #fff;
 }
 
-.logo{width:68px;height:68px;margin:0 auto;border-radius:14px;background:linear-gradient(135deg,var(--accent),#ffb3d0);display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;font-size:22px}
-.greet{margin:14px 0 4px;font-size:15px;color:var(--muted);letter-spacing:0.12em;font-family:'Dancing Script', cursive}
-.name{margin:0;font-size:42px;color:#2b2340;opacity:0;transform:translateY(10px);transition:all 900ms ease;font-family:'Dancing Script', cursive}
-.line{margin:16px 0 20px;color:#333;font-size:17px}
-.buttons{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-.btn{padding:12px 18px;border-radius:12px;border:0;font-weight:700;cursor:pointer;box-shadow:0 8px 26px rgba(0,0,0,0.06);font-size:16px}
-.primary{background:linear-gradient(90deg,var(--accent),#ffb3d0);color:#fff}
-.danger{background:transparent;border:1px solid rgba(80,20,40,0.06);color:#8b465a;position:relative}
-.result{margin-top:16px;font-size:15px;color:#7b4b6c;min-height:24px}
-.footer{margin-top:18px;font-size:13px;color:var(--muted)}
-
-/* floating hearts / kittens / petals */
-.hearts, .pets{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:5}
-
-/* kitten style (svg container) */
-.kitty{
-  position:absolute;
-  width:64px;height:64px;transform-origin:center center;
-  transition:transform 400ms ease;
+.container {
+  z-index: 10;
 }
 
-/* petal small */
-.petal{
-  position:absolute;width:28px;height:28px;opacity:0.95;transform-origin:center;
+h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
 }
 
-/* responsive */
-@media(max-width:520px){
-  .card{padding:22px}
-  .name{font-size:34px}
-  .logo{width:58px;height:58px}
+p {
+  font-size: 1.6rem;
+  margin: 0.4rem;
+}
+
+.buttons {
+  margin-top: 1.4rem;
+}
+
+button {
+  border: none;
+  border-radius: 2rem;
+  padding: 0.8rem 1.8rem;
+  margin: 0 1rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.yes-btn {
+  background-color: #ff69b4;
+  color: white;
+}
+
+.no-btn {
+  background-color: #fff;
+  color: #ff69b4;
+  position: relative;
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+}
+
+.fade-in.delay {
+  animation-delay: 1s;
+}
+
+.fade-in.delay2 {
+  animation-delay: 2s;
+}
+
+.fade-in.delay3 {
+  animation-delay: 3s;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.floating {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0.8;
+  animation: float 10s linear infinite;
+}
+
+@keyframes float {
+  from {
+    transform: translateY(100vh) rotate(0deg);
+  }
+  to {
+    transform: translateY(-10vh) rotate(360deg);
+  }
 }
