@@ -4,8 +4,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: 'Dancing Script', cursive;
-  background: linear-gradient(135deg, #ffd1dc, #ffb6c1);
+  flex-direction: column;
+  background: linear-gradient(135deg, #ffc0cb, #ffb6c1, #ff99ac);
+  font-family: 'Quicksand', sans-serif;
   overflow: hidden;
   text-align: center;
   color: #fff;
@@ -13,40 +14,51 @@ body {
 
 .container {
   z-index: 10;
+  transition: opacity 1s ease;
 }
 
 h1 {
+  font-family: 'Dancing Script', cursive;
   font-size: 3rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 p {
-  font-size: 1.6rem;
-  margin: 0.4rem;
+  font-size: 1.4rem;
+  margin: 0.5rem;
 }
 
 .buttons {
-  margin-top: 1.4rem;
+  margin-top: 1.5rem;
 }
 
 button {
   border: none;
-  border-radius: 2rem;
-  padding: 0.8rem 1.8rem;
+  border-radius: 30px;
+  padding: 0.9rem 2rem;
   margin: 0 1rem;
   font-size: 1.2rem;
   cursor: pointer;
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
 }
 
 .yes-btn {
-  background-color: #ff69b4;
+  background: #ff69b4;
   color: white;
+  box-shadow: 0 4px 10px rgba(255, 105, 180, 0.3);
+}
+
+.yes-btn:hover {
+  transform: scale(1.1);
+  background: #ff1493;
 }
 
 .no-btn {
-  background-color: #fff;
+  background: #fff;
   color: #ff69b4;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
   position: relative;
 }
 
@@ -55,36 +67,45 @@ button {
   animation: fadeIn 2s forwards;
 }
 
-.fade-in.delay {
-  animation-delay: 1s;
-}
-
-.fade-in.delay2 {
-  animation-delay: 2s;
-}
-
-.fade-in.delay3 {
-  animation-delay: 3s;
+.hidden {
+  display: none;
 }
 
 @keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
+  to { opacity: 1; }
 }
 
 .floating {
   position: absolute;
   pointer-events: none;
   opacity: 0.8;
-  animation: float 10s linear infinite;
+  animation: float 12s linear infinite;
 }
 
 @keyframes float {
-  from {
-    transform: translateY(100vh) rotate(0deg);
-  }
-  to {
-    transform: translateY(-10vh) rotate(360deg);
-  }
+  from { transform: translateY(100vh) rotate(0deg); }
+  to { transform: translateY(-10vh) rotate(360deg); }
+}
+
+.final-message {
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  text-align: center;
+}
+
+.final-message h2 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.final-message p {
+  font-size: 1.4rem;
+}
+
+.soft {
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+  opacity: 0.9;
 }
