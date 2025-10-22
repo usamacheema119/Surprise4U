@@ -5,20 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Surprise for My Little Girl 💖</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Quicksand:wght@500;700&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <div class="container">
-    <h1 class="fade-in">🎬 Surprise Movie Date 💞</h1>
-    <p class="fade-in delay">Hey Aisha 💖</p>
-    <p class="fade-in delay2">Would you be my movie date tonight? 🍿✨</p>
-    <div class="buttons fade-in delay3">
+  <div class="container fade-in">
+    <h1>🎬 Surprise Movie Date 💞</h1>
+    <p class="line1">Hey Aisha 💖</p>
+    <p class="line2">Would you be my movie date on <strong>Saturday, 26 Oct - 9PM (Indonesian Time)</strong>? 🍿✨</p>
+    <div class="buttons">
       <button class="yes-btn">Of course 😍</button>
       <button class="no-btn">No 😅</button>
     </div>
   </div>
 
-  <!-- Floating kittens and peonies -->
+  <!-- Message appears after clicking Yes -->
+  <div class="final-message hidden fade-in" id="finalMessage">
+    <h2>Yay! 💞</h2>
+    <p>See you at <strong>9 PM Saturday</strong> — Movie: <em>Pride and Prejudice 🎬</em></p>
+    <p class="soft">I can’t wait to watch with you, my little girl 💕</p>
+  </div>
+
+  <!-- Floating emojis -->
   <div id="floating-elements"></div>
 
   <audio id="bg-music" src="music/music.wav" preload="auto" loop></audio>
