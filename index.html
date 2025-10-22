@@ -1,43 +1,27 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Surprise for My Little Girl 💕</title>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Surprise for My Little Girl 💖</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <div id="loader" class="loader">
-    <div class="loader-box">
-      <div class="loader-heart">💖</div>
-      <div class="loader-text">A surprise is loading for you, my little girl 💕</div>
+  <div class="container">
+    <h1 class="fade-in">🎬 Surprise Movie Date 💞</h1>
+    <p class="fade-in delay">Hey Aisha 💖</p>
+    <p class="fade-in delay2">Would you be my movie date tonight? 🍿✨</p>
+    <div class="buttons fade-in delay3">
+      <button class="yes-btn">Of course 😍</button>
+      <button class="no-btn">No 😅</button>
     </div>
   </div>
 
-  <div class="stage" id="stage" aria-hidden="true">
-    <div class="card">
-      <div class="logo">U ♥ A</div>
+  <!-- Floating kittens and peonies -->
+  <div id="floating-elements"></div>
 
-      <h2 class="greet">For my Baby Girl</h2>
-      <h1 class="name" id="name">Aisha</h1>
-
-      <p class="line">Aisha, will you join me for our cozy movie date — <strong>Pride &amp; Prejudice</strong> — this Sunday at <strong>9:00 PM (PKT)</strong>?</p>
-
-      <div class="buttons">
-        <button class="btn primary" id="yesBtn">Of course 😘</button>
-        <button class="btn danger" id="noBtn">No 💔</button>
-      </div>
-
-      <p class="result" id="result"></p>
-      <p class="footer">With love — <strong>Usama</strong> 💫</p>
-    </div>
-
-    <div class="hearts" id="hearts"></div>
-    <div class="pets" id="pets"></div>
-  </div>
-
-  <audio id="bgm" loop preload="auto" src="music/music.wav"></audio>
+  <audio id="bg-music" src="music/music.wav" preload="auto" loop></audio>
 
   <script src="script.js"></script>
 </body>
