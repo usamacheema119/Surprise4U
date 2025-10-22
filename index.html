@@ -2,32 +2,46 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
   <title>Surprise for My Little Girl 💖</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Quicksand:wght@500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="container fade-in">
-    <h1>🎬 Surprise Movie Date 💞</h1>
-    <p class="line1">Hey Aisha 💖</p>
-    <p class="line2">Would you be my movie date on <strong>Saturday, 26 Oct - 9PM (Indonesian Time)</strong>? 🍿✨</p>
+  <!-- Main invite -->
+  <div class="container fade-in" id="invite">
+    <h1>🎬 Movie Date Invitation 💞</h1>
+    <p class="line1">Hey my Little Girl, <strong>Aisha</strong> 💖</p>
+    <p class="line2">
+      Will you join me for a cozy movie night on<br>
+      <strong>Saturday, 26 October • 9PM (Indonesian Time)</strong> 🌙🍿
+    </p>
     <div class="buttons">
-      <button class="yes-btn">Of course 😍</button>
-      <button class="no-btn">No 😅</button>
+      <button class="yes-btn" id="yesBtn">Of course 😍</button>
+      <button class="no-btn" id="noBtn">No 😅</button>
     </div>
   </div>
 
-  <!-- Message appears after clicking Yes -->
-  <div class="final-message hidden fade-in" id="finalMessage">
-    <h2>Yay! 💞</h2>
-    <p>See you at <strong>9 PM Saturday</strong> — Movie: <em>Pride and Prejudice 🎬</em></p>
-    <p class="soft">I can’t wait to watch with you, my little girl 💕</p>
+  <!-- Reward card (hidden by default) -->
+  <div class="reward-card hidden" id="rewardCard" aria-hidden="true">
+    <div class="reward-inner">
+      <h2 class="reward-title">Yayyyyy 🎉</h2>
+      <p class="reward-sub">Here is Baby's reward 💖</p>
+
+      <!-- IMPORTANT: put your real screenshot here as assets/transaction.png -->
+      <div class="tx-wrap">
+        <img src="assets/transaction.png" alt="Transaction screenshot" id="txImage">
+      </div>
+
+      <p class="reward-note">A little surprise — I love you so much 💕</p>
+      <button class="close-btn" id="closeReward">Close</button>
+    </div>
   </div>
 
-  <!-- Floating emojis -->
+  <!-- Floating kittens & peonies -->
   <div id="floating-elements"></div>
 
+  <!-- Background music (keeps playing during reward) -->
   <audio id="bg-music" src="music/music.wav" preload="auto" loop></audio>
 
   <script src="script.js"></script>
