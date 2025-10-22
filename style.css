@@ -1,60 +1,202 @@
-/* Basic + mobile friendly */
+/* 🌸 Base + mobile friendly */
 :root{
   --accent-pink:#ff6fa3;
   --soft-bg-1:#ffb6c1;
   --soft-bg-2:#ffc0cb;
+  --white:#fff;
+  --shadow:0 8px 28px rgba(255,111,157,0.25);
 }
-*{box-sizing:border-box}
+*{box-sizing:border-box;margin:0;padding:0}
 body{
-  margin:0;height:100vh;display:flex;align-items:center;justify-content:center;flex-direction:column;
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
   background:linear-gradient(135deg,var(--soft-bg-1),var(--soft-bg-2));
-  font-family:'Poppins',sans-serif;overflow:hidden;color:#fff;text-align:center;
+  font-family:'Poppins',sans-serif;
+  overflow:hidden;
+  color:#fff;
+  text-align:center;
 }
 
-/* Invite container */
-.container{z-index:10;padding:1rem;max-width:92%;transition:opacity .9s ease,transform .9s ease}
-h1{font-family:'Great Vibes',cursive;font-size:2.6rem;margin:0 0 .6rem;text-shadow:0 3px 10px rgba(0,0,0,0.15)}
-.line1{font-size:1.1rem;margin:0}
-.line2{font-size:1rem;margin:.6rem 0 0}
+/* 🎬 Invite container */
+.container{
+  z-index:10;
+  padding:1rem;
+  max-width:92%;
+  transition:opacity .9s ease,transform .9s ease;
+}
+h1{
+  font-family:'Great Vibes',cursive;
+  font-size:2.6rem;
+  margin-bottom:.5rem;
+  text-shadow:0 3px 10px rgba(0,0,0,0.15);
+}
+.line1{font-size:1.1rem}
+.line2{font-size:1rem;margin-top:.4rem}
 
-/* Buttons */
-.buttons{margin-top:1.4rem;display:flex;gap:0.8rem;justify-content:center;flex-wrap:wrap}
-button{border:0;border-radius:50px;padding:.85rem 1.6rem;font-weight:700;cursor:pointer;transition:all .28s ease; font-size:1rem}
-.yes-btn{background:linear-gradient(90deg,var(--accent-pink),#ffb3d0);color:#fff;box-shadow:0 8px 28px rgba(255,111,157,0.25)}
-.yes-btn:hover{transform:translateY(-4px) scale(1.03)}
-.no-btn{background:#fff;color:var(--accent-pink);box-shadow:0 8px 26px rgba(255,255,255,0.4);position:relative}
+/* 💖 Buttons */
+.buttons{
+  margin-top:1.4rem;
+  display:flex;
+  gap:0.8rem;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+button{
+  border:0;
+  border-radius:50px;
+  padding:.85rem 1.6rem;
+  font-weight:700;
+  cursor:pointer;
+  transition:all .28s ease;
+  font-size:1rem;
+}
+.yes-btn{
+  background:linear-gradient(90deg,var(--accent-pink),#ffb3d0);
+  color:var(--white);
+  box-shadow:var(--shadow);
+}
+.yes-btn:hover{
+  transform:translateY(-4px) scale(1.03);
+}
+.no-btn{
+  background:#fff;
+  color:var(--accent-pink);
+  box-shadow:0 8px 26px rgba(255,255,255,0.4);
+  position:relative;
+}
 
-/* floating items */
-.floating{position:absolute;pointer-events:none;opacity:.95;animation:float linear infinite}
-@keyframes float{from{transform:translateY(100vh) rotate(0deg)}to{transform:translateY(-10vh) rotate(360deg)}}
+/* 🐾 Floating kitties & peonies */
+.floating{
+  position:absolute;
+  pointer-events:none;
+  opacity:.95;
+  animation:float linear infinite;
+}
+@keyframes float{
+  from{transform:translateY(100vh) rotate(0deg)}
+  to{transform:translateY(-10vh) rotate(360deg)}
+}
 
-/* Reward card */
-.reward-card{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(11,6,10,0.18);backdrop-filter:blur(6px);z-index:50;padding:18px}
-.reward-inner{background:linear-gradient(180deg, #fff, #fff);color:#2a2a2a;border-radius:16px;padding:18px;max-width:420px;width:92%;box-shadow:0 20px 60px rgba(150,50,120,0.12);transform:scale(.92);opacity:0;transition:all .6s cubic-bezier(.2,.9,.2,1);text-align:center}
-.reward-card.show .reward-inner{transform:scale(1);opacity:1}
-.reward-title{font-family:'Great Vibes',cursive;font-size:2.2rem;color:var(--accent-pink);margin:6px 0}
-.reward-sub{margin:0 0 10px;font-weight:600}
-.tx-wrap{background:#fff;border-radius:10px;padding:8px;margin:10px auto 8px;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 30px rgba(0,0,0,0.06)}
-.tx-wrap img{max-width:100%;height:auto;border-radius:8px;display:block;object-fit:contain;}
+/* 🎁 Reward card overlay */
+.reward-card{
+  position:fixed;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:rgba(11,6,10,0.18);
+  backdrop-filter:blur(6px);
+  z-index:50;
+  padding:18px;
+  overflow:hidden;
+}
+.reward-inner{
+  background:linear-gradient(180deg,#fff,#fff);
+  color:#2a2a2a;
+  border-radius:18px;
+  padding:22px;
+  max-width:420px;
+  width:92%;
+  box-shadow:0 20px 60px rgba(150,50,120,0.12);
+  transform:scale(.9);
+  opacity:0;
+  transition:all .7s cubic-bezier(.2,.9,.2,1);
+  text-align:center;
+  position:relative;
+  animation:fadePop .8s ease forwards;
+}
+.reward-card.show .reward-inner{
+  transform:scale(1);
+  opacity:1;
+}
+@keyframes fadePop{
+  0%{transform:scale(.8);opacity:0}
+  100%{transform:scale(1);opacity:1}
+}
 
-/* reward note and close */
-.reward-note{font-size:.95rem;color:#575757;margin-top:8px}
-.close-btn{margin-top:12px;background:var(--accent-pink);color:#fff;border:0;padding:.6rem 1rem;border-radius:10px;cursor:pointer;font-weight:700}
+/* ✨ Title & Subtitle */
+.reward-title{
+  font-family:'Great Vibes',cursive;
+  font-size:2.3rem;
+  color:var(--accent-pink);
+  margin:6px 0;
+}
+.reward-sub{
+  margin:0 0 10px;
+  font-weight:600;
+}
+
+/* 💸 Transaction wrap (cuter version) */
+.tx-wrap{
+  background:linear-gradient(145deg,#fff0f6,#ffe4ec);
+  border-radius:20px;
+  padding:12px;
+  margin:14px auto 8px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 8px 30px rgba(255,182,193,0.3);
+}
+.tx-wrap img{
+  width:85%;
+  max-width:330px;
+  border-radius:18px;
+  border:3px solid #ffb6c1;
+  box-shadow:0 8px 20px rgba(255,182,193,0.4);
+  transition:transform .3s ease, box-shadow .3s ease, opacity .4s ease;
+  animation:softFade 1s ease forwards;
+}
+.tx-wrap img:hover{
+  transform:scale(1.03);
+  box-shadow:0 10px 25px rgba(255,105,180,0.5);
+}
+@keyframes softFade{
+  0%{opacity:0;transform:scale(0.95);}
+  100%{opacity:1;transform:scale(1);}
+}
+
+/* ✨ reward note & button */
+.reward-note{
+  font-size:.95rem;
+  color:#575757;
+  margin-top:8px;
+}
+.close-btn{
+  margin-top:12px;
+  background:var(--accent-pink);
+  color:#fff;
+  border:0;
+  padding:.6rem 1rem;
+  border-radius:10px;
+  cursor:pointer;
+  font-weight:700;
+  box-shadow:0 8px 30px rgba(255,182,193,0.3);
+  transition:transform .25s ease;
+}
+.close-btn:hover{transform:scale(1.04)}
 
 /* hidden helper */
 .hidden{display:none}
 
-/* small screens (Android) */
+/* 💕 Subtle hearts behind reward */
+.reward-card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255,111,157,0.08), transparent 10%),
+    radial-gradient(circle at 80% 80%, rgba(255,200,230,0.06), transparent 12%);
+  pointer-events:none;
+}
+
+/* 📱 Android friendly */
 @media (max-width:600px){
   h1{font-size:2rem}
   .reward-inner{padding:14px}
-  .tx-wrap{padding:6px}
-}
-
-/* gentle backdrop hearts behind reward (subtle) */
-.reward-card::before{
-  content:"";position:absolute;inset:0;z-index:-1;background:
-  radial-gradient(circle at 20% 20%, rgba(255,111,157,0.08), transparent 10%),
-  radial-gradient(circle at 80% 80%, rgba(255,200,230,0.06), transparent 12%);
-  pointer-events:none;
+  .tx-wrap{padding:8px}
+  .tx-wrap img{width:90%;border-radius:14px}
 }
